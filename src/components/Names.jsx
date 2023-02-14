@@ -1,23 +1,42 @@
 import React from "react";
 import data from "../data/babyNamesData.json";
+import Button from "react-bootstrap/Button";
+
 
 const Names = () => {
-    const names = data.sort(function (a, b) {
-        if (a.name < b.name) {
-            return -1;
-        } else { 
-            return 1;
-        }
-    });
+  const names = data.sort(function (a, b) {
+    if (a.name < b.name) {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
 
-//   console.log(names);
+  //   console.log(names);
   return (
     <div>
-      {names.map((item,key) => {
+      {names.map((item, key) => {
         if (item.sex === "m") {
-            return <button key={key} className="btn btn-primary">{item.name}</button>;
+          return (
+              <Button style={{ margin:'5px'}}
+              variant="outline-primary"
+              key={key}
+              className="btn --bs-primary-border-subtle"
+            >
+              {item.name}
+            </Button>
+          );
         } else {
-            return <button key={key} className="btn btn-success">{item.name}</button>;
+          return (
+            <Button
+              style={{ margin: "5px" }}
+              variant="outline-danger"
+              key={key}
+              //   className="btn btn-success"
+            >
+              {item.name}
+            </Button>
+          );
         }
       })}
     </div>
