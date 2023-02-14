@@ -2,7 +2,6 @@ import React from "react";
 import data from "../data/babyNamesData.json";
 import Button from "react-bootstrap/Button";
 
-
 const Names = () => {
   const names = data.sort(function (a, b) {
     if (a.name < b.name) {
@@ -15,10 +14,12 @@ const Names = () => {
   //   console.log(names);
   return (
     <div>
+      <hr />
       {names.map((item, key) => {
         if (item.sex === "m") {
           return (
-              <Button style={{ margin:'5px'}}
+            <Button
+              style={{ margin: "5px" }}
               variant="outline-primary"
               key={key}
               className="btn --bs-primary-border-subtle"
@@ -39,6 +40,7 @@ const Names = () => {
           );
         }
       })}
+      <hr />
     </div>
   );
 };
