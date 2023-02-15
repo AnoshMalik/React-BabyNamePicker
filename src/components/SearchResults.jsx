@@ -10,8 +10,7 @@ function SearchResults(props) {
               
             
               props.results.map((name, key) => {
-                    if (props.results.length === 0) {
-                    } else {
+                   
                       if (name.sex === "m") {
                         return (
                           <Button
@@ -35,7 +34,7 @@ function SearchResults(props) {
                           </Button>
                         );
                       }
-                    }
+                    
               }
               )
 
